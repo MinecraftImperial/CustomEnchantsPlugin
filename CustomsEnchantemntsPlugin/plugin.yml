@@ -1,0 +1,25 @@
+main: main.MainPlugin
+version: 1.0
+name: CustomEnchants
+commands:
+  bolsillosrotos:
+  
+  torpeza:
+  
+  aerodinamico:
+  
+  anti_aerodinamico:
+  
+  mala_calidad:
+  
+  lluviaflechas:
+  
+  lluviafuego:
+  
+  piesplomo:
+  
+  derrochador:
+  
+  agilidad_magmatica:
+  
+  varagolems:
