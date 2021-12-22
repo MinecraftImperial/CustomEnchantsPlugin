@@ -1,25 +1,16 @@
+api-version: "1.17"
+commands: 
+  aerodinamico: ~
+  anti_aerodinamico: ~
+  bolsillosrotos: ~
+  derrochador: ~
+  lluviaflechas: ~
+  lluviafuego: ~
+  mala_calidad: ~
+  piesplomo: ~
+  torpeza: ~
 main: main.MainPlugin
-version: 1.0
 name: CustomEnchants
-commands:
-  bolsillosrotos:
-  
-  torpeza:
-  
-  aerodinamico:
-  
-  anti_aerodinamico:
-  
-  mala_calidad:
-  
-  lluviaflechas:
-  
-  lluviafuego:
-  
-  piesplomo:
-  
-  derrochador:
-  
-  agilidad_magmatica:
-  
-  varagolems:
+version: 1.0
+author: Juance
+website: https://github.com/juance20

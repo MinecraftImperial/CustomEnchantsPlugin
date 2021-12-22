@@ -1,6 +1,7 @@
 package enchants;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.bukkit.Bukkit;
@@ -9,7 +10,6 @@ import org.bukkit.enchantments.Enchantment;
 import java.lang.reflect.Field;
 
 public class CustomEnchants {
-	public static final Enchantment ASMA = new EnchantmentWrapper("asma", "Asma", 5);
 	public static final Enchantment BOLSILLOSROTOS = new EnchantmentWrapper("bolsillosrotos", "Bolsillos Rotos", 3);
 	public static final Enchantment TORPEZA = new EnchantmentWrapper("torpeza", "Torpeza", 5);
 	public static final Enchantment AERODINAMICO = new EnchantmentWrapper("aerodinamico", "Aerodinamico", 1);
@@ -19,11 +19,9 @@ public class CustomEnchants {
 	public static final Enchantment LLUVIA_FUEGO = new EnchantmentWrapper("lluvia_fuego", "Lluvia de flechas ardientes", 1);
 	public static final Enchantment PIES_PLOMO = new EnchantmentWrapper("pies_plomo", "Pies de plomo", 3);
 	public static final Enchantment DERROCHADOR = new EnchantmentWrapper("derrochador", "Derrochador", 1);
-	public static final Enchantment AGILIDAD_MAGMATICA = new EnchantmentWrapper("agilidad_magmatica", "Agilidad magmática", 3);
 	public static final Enchantment MALA_PUNTERIA = new EnchantmentWrapper("mala_punteria", "Mala puntería", 1);
 	
 	public static void register() {
-		boolean ASMAregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(ASMA);
 		boolean BOLSILLOSROTOSregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(BOLSILLOSROTOS);
 		boolean TORPEZAregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(TORPEZA);
 		boolean AERODINAMICOregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(AERODINAMICO);
@@ -33,12 +31,7 @@ public class CustomEnchants {
 		boolean LLUVIA_FUEGOregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(LLUVIA_FUEGO);
 		boolean PIES_PLOMOregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(PIES_PLOMO);
 		boolean DERROCHADORregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(DERROCHADOR);
-		boolean AGILIDAD_MAGMATICAregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(AGILIDAD_MAGMATICA);
 		boolean MALA_PUNTERIAregistered = Arrays.stream(Enchantment.values()).collect(Collectors.toList()).contains(MALA_PUNTERIA);
-		
-		if(!ASMAregistered) {
-			registerEnchantment(ASMA);
-		}
 		
 		if(!BOLSILLOSROTOSregistered) {
 			registerEnchantment(BOLSILLOSROTOS);
@@ -77,9 +70,6 @@ public class CustomEnchants {
 			registerEnchantment(DERROCHADOR);
 		}
 		
-		if(!AGILIDAD_MAGMATICAregistered) {
-			registerEnchantment(AGILIDAD_MAGMATICA);
-		}
 		
 		if(!MALA_PUNTERIAregistered) {
 			registerEnchantment(MALA_PUNTERIA);
@@ -105,6 +95,38 @@ public class CustomEnchants {
 			Bukkit.getConsoleSender().sendMessage("El encantamiento " + enchantment.getName() + " ha sido registrado");
 		}
 		
+	}
+	
+	public static List<Enchantment> getEnchantsListHelmet() {
+		return Arrays.asList(MALA_CALIDAD, LLUVIA_FLECHAS, LLUVIA_FUEGO);
+	}
+	
+	public static List<Enchantment> getEnchantsListChestplate() {
+		return Arrays.asList(MALA_CALIDAD, LLUVIA_FLECHAS, LLUVIA_FUEGO);
+	}
+	
+	public static List<Enchantment> getEnchantsListLeggings() {
+		return Arrays.asList(MALA_CALIDAD, LLUVIA_FLECHAS, LLUVIA_FUEGO, BOLSILLOSROTOS);
+	}
+	
+	public static List<Enchantment> getEnchantsListBoots() {
+		return Arrays.asList(MALA_CALIDAD, LLUVIA_FLECHAS, LLUVIA_FUEGO, PIES_PLOMO);
+	}
+	
+	public static List<Enchantment> getEnchantsListBook() {
+		return Arrays.asList(AERODINAMICO, ANTI_AERODINAMICO, MALA_CALIDAD, LLUVIA_FLECHAS, LLUVIA_FUEGO, PIES_PLOMO, BOLSILLOSROTOS, TORPEZA, DERROCHADOR);
+	}
+	
+	public static List<Enchantment> getEnchantsListTools() {
+		return Arrays.asList(MALA_CALIDAD);
+	}
+	
+	public static List<Enchantment> getEnchantsListSword() {
+		return Arrays.asList(MALA_CALIDAD, TORPEZA);
+	}
+	
+	public static List<Enchantment> getEnchantsListBow() {
+		return Arrays.asList(MALA_CALIDAD, DERROCHADOR);
 	}
 	
 }
